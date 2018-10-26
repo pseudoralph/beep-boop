@@ -56,8 +56,9 @@ function outputFormatter(outputArray) {
 }
 
 function userInputValidator(userInput) {
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt#A_stricter_parse_function
-  if (/^(\-|\+)?([0-9]+)$/.test(userInput)) {return true}
+  const onlyNumber = /\d/g;
+
+  if (onlyNumber.test(userInput)) {return true}
   return false;
 }
 
