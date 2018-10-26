@@ -30,7 +30,7 @@ function responseBuilder(validatedInput, reverseBool, name='Dave') {
       output.push(num);
     }
   }
-  
+
   if (reverseBool) {
     return outputFormatter(output.reverse());
   }
@@ -56,7 +56,8 @@ function outputFormatter(outputArray) {
 }
 
 function userInputValidator(userInput) {
-  if (parseInt(userInput) >= 0) {return true;}
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt#A_stricter_parse_function
+  if (/^(\-|\+)?([0-9]+)$/.test(userInput)) {return true}
   return false;
 }
 
@@ -90,17 +91,20 @@ $(function(){
   });
 
   $("#go-button").click(function() {
+    $("#one-line-btn").hide();
     $(".output").empty();
 
     var capturedInput = $("#user-input").val();
-    var name = ($("#name-input").val()) ? ($("#name-input").val()) : (undefined)
+    var name = ($("#name-input").val()) ? ($("#name-input").val()) : (undefined);
     var reverseOutput = $("#reverse-order").prop("checked");
 
     if (userInputValidator(capturedInput)) {
       $(".output").html(responseBuilder(capturedInput,reverseOutput,name));
-    } else {$("#user-input").val("Invalid entry")}
+      $("#one-line-btn").show();
+    } else {
+      $("#user-input").val("Invalid entry");
+    }
 
-    $("#one-line-btn").show();
 
   });
 
