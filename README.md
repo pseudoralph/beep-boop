@@ -42,21 +42,21 @@ HTML, CSS, JS, and jQuery
 
 ## Objectives
 
-- [ ] Variable names are descriptive and use lower camel case (e.g. myVariableExample).
+- [x] Variable names are descriptive and use lower camel case (e.g. myVariableExample).
 
-- [ ] Code is clean, well-refactored, and easy-to-read. This includes correct indendation, spacing, and including only necessary comments and debugging tools.
+- [x] Code is clean, well-refactored, and easy-to-read. This includes correct indentation, spacing, and including only necessary comments and debugging tools.
 
-- [ ] All previous objectives have been met.
+- [x] All previous objectives have been met.
 
-- [ ] Logic is broken down into "plain English" specs, listed in README.
+- [x] Logic is broken down into "plain English" specs, listed in README.
 
-- [ ] Project is in a presentable, portfolio-quality state.
+- [x] Project is in a presentable, portfolio-quality state.
 
-- [ ] Required functionality is in place by Friday deadline.
+- [x] Required functionality is in place by Friday deadline.
 
-- [ ] Project demonstrates understanding of this week's concepts. If prompted, you are able to discuss your code with an instructor using correct terminology.
+- [x] Project demonstrates understanding of this week's concepts. If prompted, you are able to discuss your code with an instructor using correct terminology.
 
-- [ ] Application implements a loop and works as expected.
+- [x] Application implements a loop and works as expected.
 
 ---
 

@@ -13,7 +13,7 @@ p.robot {
 }
 
 .go-toggle button {
-  border: 1px solid #ced4da !important;
+  border: 1px solid #ced4da;
 }
 
 .input-fields{

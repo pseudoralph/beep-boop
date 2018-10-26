@@ -85,7 +85,7 @@ $(function(){
 
   $("#reset").click(function() {
     location.reload();
-  })
+  });
 
   $("#one-line-btn").click(function() {
     outputExpander();
