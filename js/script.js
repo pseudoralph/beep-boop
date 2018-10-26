@@ -34,11 +34,8 @@ function responseBuilder(validatedInput) {
 }
 
 function userInputValidator(userInput) {
-  if (parseInt(userInput) && parseInt(userInput) >= 0) {
-    responseBuilder(userInput)
-  } else {console.log('nope')}
-
-
+  if (parseInt(userInput) >= 0) {return true}
+  return false
 }
 
 // UI logic below
@@ -46,14 +43,20 @@ function userInputValidator(userInput) {
 $(function(){
 
   $("#go-button").click(function() {
-    var capturedInput = $("#user-input").val()
-    $(".output").text(responseBuilder(capturedInput));
+    $(".output").empty();
+    var capturedInput = $("#user-input").val();
 
-
+    if (userInputValidator(capturedInput)) {
+      if ($("#reverse-order").prop("checked")) {
+        $(".output").text(responseBuilder(capturedInput).reverse());
+      } else {
+        $(".output").text(responseBuilder(capturedInput));
+      }
+    } else {
+      $("#user-input").val("Invalid input");
+    }
   })
 
   $("#user-input").keyup(function(event) {
     if (event.keyCode === 13) {$("#go-button").click();}});
-
-
 })
