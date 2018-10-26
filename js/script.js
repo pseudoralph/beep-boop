@@ -7,16 +7,16 @@ function boop() {
   return 'Boop!';
 }
 
-function daveMsg() {
-  return "I'm sorry, Dave. I'm afraid I can't do that.";
+function daveMsg(name) {
+  return "I'm sorry, "+ name +". I'm afraid I can't do that.";
 }
 
-function responseBuilder(validatedInput, reverseBool) {
+function responseBuilder(validatedInput, reverseBool, name='Dave') {
   var output = [];
 
   for (var num=0; num <= validatedInput; num ++){
     if (num !=0 && num % 3 === 0) {
-      output.push(daveMsg());
+      output.push(daveMsg(name));
       continue;
     }
     if (num.toString().indexOf("1") > -1) {
@@ -41,15 +41,15 @@ function responseBuilder(validatedInput, reverseBool) {
 function outputFormatter(outputArray) {
   var htmlCode= "";
 
-  outputArray.forEach(function(line,i) {
+  outputArray.forEach(function(line) {
     if (parseInt(line)) {
-      htmlCode += '<p id="int-'+i+'">'+line+'</p>\n';
+      htmlCode += '<p>'+line+'</p>\n';
     } else if (line.indexOf('Beep') > -1) {
-      htmlCode += '<p class="robot beep" id="int-'+i+'">'+line+'</p>\n';
+      htmlCode += '<p class="robot beep">'+line+'</p>\n';
     } else if (line.indexOf('Boop') > -1) {
-      htmlCode += '<p class="robot boop" id="int-'+i+'">'+line+'</p>\n';
+      htmlCode += '<p class="robot boop">'+line+'</p>\n';
     } else {
-      htmlCode += '<p class="robot dave-msg" id="int-'+i+'">'+line+'</p>\n';
+      htmlCode += '<p class="robot dave-msg">'+line+'</p>\n';
     }
   });
 
@@ -67,11 +67,14 @@ $(function(){
 
   $("#go-button").click(function() {
     $(".output").empty();
+
     var capturedInput = $("#user-input").val();
+    var name = ($("#name-input").val()) ? ($("#name-input").val()) : (undefined)
     var reverseOutput = $("#reverse-order").prop("checked");
 
+
     if (userInputValidator(capturedInput)) {
-      $(".output").html(responseBuilder(capturedInput,reverseOutput));
+      $(".output").html(responseBuilder(capturedInput,reverseOutput,name));
     } else {$("#user-input").val("Invalid entry")}
   })
 

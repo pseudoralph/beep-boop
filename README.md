@@ -10,9 +10,11 @@ This webapp takes a user's input (an integer) and replaces "beep" for numbers co
 
 ## Setup/Installation Requirements
 
-* clone this repository using `git clone https://github.com/ `
+* clone this repository using `git clone https://github.com/pseudoralph/beep-boop`
 * navigate to the downloaded repo
 * launch `index.html` in a browser of your choice
+
+Alternatively, this site can be viewed at [https://pseudoralph.github.io/beep-boop/](https://pseudoralph.github.io/beep-boop/)
 
 ## Technologies Used
 

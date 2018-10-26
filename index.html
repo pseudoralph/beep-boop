@@ -16,23 +16,38 @@
   <body>
     <div class="container">
 
-      <div class="row">
+      <div class="row input-fields">
+
         <div class="col-md-3">
+
           <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Enter a number" id="user-input">
+
             <div class="input-group-append">
               <button class="btn btn-outline-secondary" type="submit" id="go-button">Go!</button>
               <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">Toggle Dropdown</span></button>
+
               <div class="dropdown-menu">
                 <div class="form-group form-check" id="order-toggle">
                   <input type="checkbox" class="form-check-input" id="reverse-order">
                   <label class="form-check-label" for="reverse-order">Reverse order</label>
-
                 </div>
               </div>
+
             </div>
+
           </div>
         </div>
+
+        <div class="col-md-3">
+          <div class="input-group mb-3">
+            <span>Name: <br/></span>
+            <input type="text" class="form-control" placeholder="Name (optional)" id="name-input">
+          </div>
+
+        </div>
+
+
       </div>
 
       <div class="output">

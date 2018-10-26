@@ -15,6 +15,16 @@ p.robot {
   font-weight: 400;
   letter-spacing: -1px;
   line-height: 2em;
+  color: #a51624;
+}
+
+p.dave-msg {
+  text-shadow: 2px 2px 3px black;
+  color: #d53645;
+}
+
+.input-fields span {
+  line-height: 2.3em;
 }
 
 #order-toggle {
