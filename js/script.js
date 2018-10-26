@@ -69,15 +69,26 @@ function outputExpander() {
     $("#one-line-btn").text("Compress output");
     $("#one-line-btn").addClass("btn-light");
     $("#one-line-btn").removeClass("btn-secondary");
-  } else {
+    return;
+  }
+  if (!$(".output").hasClass("one-line")) {
     $(".output").addClass("one-line");
     $("#one-line-btn").text("Expand output");
-    $("#one-line-btn").removeClass("btn-light")
-    $("#one-line-btn").addClass("btn-secondary")
+    $("#one-line-btn").removeClass("btn-light");
+    $("#one-line-btn").addClass("btn-secondary");
+    return;
   }
 }
 
 $(function(){
+
+  $("#reset").click(function() {
+    location.reload();
+  })
+
+  $("#one-line-btn").click(function() {
+    outputExpander();
+  });
 
   $("#go-button").click(function() {
     $(".output").empty();
@@ -92,10 +103,7 @@ $(function(){
 
     $("#one-line-btn").show();
 
-    $("#one-line-btn").click(function() {
-      outputExpander();
-    });
-  })
+  });
 
   $("#user-input").keyup(function(event) {
     if (event.keyCode === 13) {$("#go-button").click();}
