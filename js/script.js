@@ -30,11 +30,10 @@ function responseBuilder(validatedInput, reverseBool, name='Dave') {
       output.push(num);
     }
   }
-
+  
   if (reverseBool) {
     return outputFormatter(output.reverse());
   }
-
   return outputFormatter(output);
 }
 
@@ -67,14 +66,14 @@ function outputExpander() {
   if ($(".output").hasClass("one-line")) {
     $(".output").removeClass("one-line");
     $("#one-line-btn").text("Compress output");
-    $("#one-line-btn").addClass("btn-light");
+    $("#one-line-btn").addClass("btn-light one-line-btn");
     $("#one-line-btn").removeClass("btn-secondary");
     return;
   }
   if (!$(".output").hasClass("one-line")) {
     $(".output").addClass("one-line");
     $("#one-line-btn").text("Expand output");
-    $("#one-line-btn").removeClass("btn-light");
+    $("#one-line-btn").removeClass("btn-light one-line-btn");
     $("#one-line-btn").addClass("btn-secondary");
     return;
   }

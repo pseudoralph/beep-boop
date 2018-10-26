@@ -1,32 +1,31 @@
-body {
-  margin-top: 30px;
-}
-
 p {
   font-family: 'Press Start 2P', cursive;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
   margin-top: 0;
   margin-bottom: .8rem;
 }
 
 p.robot {
-  font-family: 'Press Start 2P', cursive;
   font-size: 14px;
-  font-weight: 400;
   letter-spacing: -1px;
   line-height: 2em;
   color: #d53645;
 }
 
-.input-fields{
-  margin-bottom: 20px;
-
+.go-toggle button {
+  border: 1px solid #ced4da !important;
 }
 
-.input-fields span {
-  line-height: 2.3em;
+.input-fields{
+  background-color: #f8f8f8;
+  padding: 35px 20px 20px;
+  margin-bottom: 20px;
+}
 
+.one-line-btn {
+  color: #212529;
+  background-color: #e2e6ea;
+  border-color: #dae0e5;
 }
 
 .one-line p {
