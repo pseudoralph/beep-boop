@@ -1,14 +1,14 @@
-// Business logic below
+// ---------- Business logic ---------- //
 function beep() {
-  return 'Beep!';
+  return '"Beep!"';
 }
 
 function boop() {
-  return 'Boop!';
+  return '"Boop!"';
 }
 
 function daveMsg(name) {
-  return "I'm sorry, "+ name +". I'm afraid I can't do that.";
+  return '"I\'m sorry, '+ name +'. I\'m afraid I can\'t do that."';
 }
 
 function responseBuilder(validatedInput, reverseBool, name='Dave') {
@@ -61,7 +61,21 @@ function userInputValidator(userInput) {
   return false;
 }
 
-// UI logic below
+// ---------- UI logic ---------- //
+
+function outputExpander() {
+  if ($(".output").hasClass("one-line")) {
+    $(".output").removeClass("one-line");
+    $("#one-line-btn").text("Compress output");
+    $("#one-line-btn").addClass("btn-light");
+    $("#one-line-btn").removeClass("btn-secondary");
+  } else {
+    $(".output").addClass("one-line");
+    $("#one-line-btn").text("Expand output");
+    $("#one-line-btn").removeClass("btn-light")
+    $("#one-line-btn").addClass("btn-secondary")
+  }
+}
 
 $(function(){
 
@@ -72,10 +86,15 @@ $(function(){
     var name = ($("#name-input").val()) ? ($("#name-input").val()) : (undefined)
     var reverseOutput = $("#reverse-order").prop("checked");
 
-
     if (userInputValidator(capturedInput)) {
       $(".output").html(responseBuilder(capturedInput,reverseOutput,name));
     } else {$("#user-input").val("Invalid entry")}
+
+    $("#one-line-btn").show();
+
+    $("#one-line-btn").click(function() {
+      outputExpander();
+    });
   })
 
   $("#user-input").keyup(function(event) {

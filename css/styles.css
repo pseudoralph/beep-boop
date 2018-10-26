@@ -3,6 +3,7 @@ body {
 }
 
 p {
+  font-family: 'Press Start 2P', cursive;
   font-size: 18px;
   font-weight: 700;
   margin-top: 0;
@@ -15,19 +16,37 @@ p.robot {
   font-weight: 400;
   letter-spacing: -1px;
   line-height: 2em;
-  color: #a51624;
+  color: #d53645;
 }
 
-p.dave-msg {
-  text-shadow: 2px 2px 3px black;
-  color: #d53645;
+.input-fields{
+  margin-bottom: 20px;
+
 }
 
 .input-fields span {
   line-height: 2.3em;
+
+}
+
+.one-line p {
+  display: inline;
+}
+
+.one-line p:after {
+  text-decoration: dotted;
+  content: ", "
+}
+
+.one-line p:last-child:after {
+  content: ""
 }
 
 #order-toggle {
   margin-bottom: 0px;
   padding-left: 2em;
+}
+
+#one-line-btn {
+  display: none;
 }
