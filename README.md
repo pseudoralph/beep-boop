@@ -34,6 +34,9 @@ HTML, CSS, JS, and jQuery
 * It should prioritize a "Beep!" response the least.
   * Input: 10
   * Expected output: "Boop!"
+* It should start at 0 and end on user's input replacing each number with its respective response
+  * User inputs: 5
+  * Expected output: ""Beep!", "Boop!", 2, "I'm Sorry...", 4, 5"
 
 ## Objectives
 
